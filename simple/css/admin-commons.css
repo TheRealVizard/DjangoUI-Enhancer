@@ -1,0 +1,157 @@
+:root {
+    --scrollbar-track-color: #f0f0f0;
+    --scrollbar-hover-color: #575757;
+    --scrollbar-primary-color: #858585;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+        "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+/* Brand */
+#site-name > a::before {
+    content: "";
+    background-image: url("../svg/brand.svg"), url("../images/brand.png");
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+    background-size: 1.5rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 5px;
+}
+
+/* Scrollbar Styles */
+/* Horizontal Scrollbar */
+::-webkit-scrollbar {
+    width: 17px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-color);
+}
+
+::-webkit-scrollbar-corner {
+    background: var(--scrollbar-track-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-primary-color);
+    border: 4px solid var(--scrollbar-track-color); /* Add border to the thumb */
+    border-radius: 10px;
+    width: 8px !important; /* Adjust thumb width */
+    height: 40px; /* Adjust thumb height */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-hover-color);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: var(--scrollbar-hover-color);
+}
+
+/* Vertical Scrollbar */
+::-webkit-scrollbar:vertical {
+    width: 17px;
+}
+
+/* Horizontal Scrollbar */
+::-webkit-scrollbar:horizontal {
+    height: 17px;
+}
+
+/* Single Button */
+::-webkit-scrollbar-button:single-button {
+    display: block;
+    background-color: var(--scrollbar-track-color);
+    width: 15px;
+    height: 15px;
+}
+
+/* Button arrows */
+/* Horizontal Scrollbar Button - Left */
+::-webkit-scrollbar-button:single-button:horizontal:decrement {
+    background-image: url("../svg/scrollbar/left.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Horizontal Scrollbar Button - Left Hovered */
+::-webkit-scrollbar-button:single-button:horizontal:decrement:hover {
+    background-image: url("../svg/scrollbar/left-hover.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Horizontal Scrollbar Button - Right */
+::-webkit-scrollbar-button:single-button:horizontal:increment {
+    background-image: url("../svg/scrollbar/right.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Horizontal Scrollbar Button - Right Hovered */
+::-webkit-scrollbar-button:single-button:horizontal:increment:hover {
+    background-image: url("data:image/svg+xml;utf8,");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Vertical Scrollbar Button - Up */
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+    background-image: url("../svg/scrollbar/up.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Vertical Scrollbar Button - Up Hovered */
+::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+    background-image: url("../svg/scrollbar/up-hover.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Vertical Scrollbar Button - Down */
+::-webkit-scrollbar-button:single-button:vertical:increment {
+    background-image: url("../svg/scrollbar/down.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Vertical Scrollbar Button - Down Hovered */
+::-webkit-scrollbar-button:single-button:vertical:increment:hover {
+    background-image: url("../svg/scrollbar/down-hover.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --scrollbar-track-color: #171717;
+        --scrollbar-hover-color: #575757;
+        --scrollbar-primary-color: #959595;
+    }
+
+    /* Horizontal Scrollbar Button - Left */
+    ::-webkit-scrollbar-button:single-button:horizontal:decrement {
+        background-image: url("../svg/scrollbar/left-dark.svg");
+    }
+
+    /* Horizontal Scrollbar Button - Right */
+    ::-webkit-scrollbar-button:single-button:horizontal:increment {
+        background-image: url("../svg/scrollbar/right-dark.svg");
+    }
+
+    /* Vertical Scrollbar Button - Up */
+    ::-webkit-scrollbar-button:single-button:vertical:decrement {
+        background-image: url("../svg/scrollbar/up-dark.svg");
+    }
+
+    /* Vertical Scrollbar Button - Down */
+    ::-webkit-scrollbar-button:single-button:vertical:increment {
+        background-image: url("../svg/scrollbar/down-dark.svg");
+    }
+}
