@@ -1,0 +1,63 @@
+
+@import ./admin-change-list
+@mixin dark-theme
+  \:root
+    --box-shadow-color: #80808026
+    --list-filter-selected-bg-color: #00363a
+    --list-filter-selected-fg-color: var(--link-fg)
+    --change-list-table-header-bg-color: #155e75
+    --change-list-table-header-bg-color2: #164e63
+    --change-list-table-header-separator-color: #086181
+    --change-list-table-header-fg-color: #e2e8f0
+    --change-list-table-header-bg-hover-color: #0369a1
+    --sort-icons-color: #e2e8f0
+    --sort-icons-hover-color: #1e1b4b
+    --scrollbar-track-color: #171717
+    --scrollbar-hover-color: #575757
+    --scrollbar-primary-color: #959595
+
+  /*     
+   *     List Filter
+
+  #changelist-filter
+    box-shadow: 1px 0px 5px var(--box-shadow-color)
+
+    > details > ul > li.selected a
+      background: var(--list-filter-selected-bg-color)
+      color: var(--list-filter-selected-fg-color)
+
+  /*     
+   *     Search Form
+
+  #toolbar, form#changelist-form div.results
+    box-shadow: 1px 0px 5px var(--box-shadow-color)
+
+    \::-webkit-scrollbar-button:single-button
+        &:horizontal
+            &:decrement
+                background-color: red
+                -webkit-mask-image: url("../svg/scrollbar/left-dark.svg")
+                -webkit-mask-position: 0 0
+                -webkit-mask-repeat: no-repeat
+
+            &:increment
+                background-image: url("../svg/scrollbar/right-dark.svg")
+
+        &:vertical
+            &:decrement
+                background-image: url("../svg/scrollbar/up-dark.svg")
+
+            &:increment
+                background-image: url("../svg/scrollbar/down-dark.svg")
+
+
+@media (prefers-color-scheme: dark)
+    @include dark-theme
+
+html
+    &[data-theme="light"]
+        @include light-theme
+
+    &[data-theme="dark"]
+        @include dark-theme
+

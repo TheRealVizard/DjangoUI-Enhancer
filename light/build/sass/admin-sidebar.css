@@ -13,7 +13,6 @@
   max-width: calc(100% - 312px);
   transition: max-width 0.5s ease-in;
 }
-
 .main > #nav-sidebar + .content {
   max-width: calc(100% - 24px);
   transition: max-width 0.5s ease-out;
@@ -52,30 +51,21 @@
 #nav-sidebar > div.module > table > tbody td:last-child {
   border-right: 1px solid var(--hairline-color);
 }
-#nav-sidebar
-  > div.module
-  > table
-  > tbody
-  > tr:nth-last-child(1)
-  > th:first-child {
+#nav-sidebar > div.module > table > tbody > tr:nth-last-child(1) > th:first-child {
   border-right: none;
   border-bottom-left-radius: 10px;
   border-bottom: 1px solid var(--hairline-color);
 }
-#nav-sidebar
-  > div.module
-  > table
-  > tbody
-  > tr:nth-last-child(1)
-  > td:last-child {
+#nav-sidebar > div.module > table > tbody > tr:nth-last-child(1) > td:last-child {
   border-left: none;
   border-bottom-right-radius: 10px;
   border-bottom: 1px solid var(--hairline-color);
 }
 
 @media (max-width: 767px) {
-  .main > #nav-sidebar + .content,
-  .main.shifted > #nav-sidebar + .content {
+  .main > #nav-sidebar + .content, .main.shifted > #nav-sidebar + .content {
     max-width: 100%;
   }
 }
+
+/*# sourceMappingURL=admin-sidebar.css.map */
