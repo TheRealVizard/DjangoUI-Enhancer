@@ -1,48 +1,4 @@
-@mixin light-theme
-  --scrollbar-track-color: #f0f0f0
-  --scrollbar-hover-color: #575757
-  --scrollbar-primary-color: #858585
-  --box-shadow-color: #00000026
-  --list-filter-selected-bg-color: #fad986
-  --list-filter-selected-fg-color: black
-  --change-list-table-header-bg-color: #f1f5f9
-  --change-list-table-header-bg-color2: #e2e8f0
-  --change-list-table-header-fg-color: black
-  --change-list-table-header-bg-hover-color: #cbd5e1
-  --change-list-table-header-separator-color: #cbd5e1
-  --sort-icons-color: #1e293b
-  --sort-icons-hover-color: #475569
-
-  /* SVG
-  --sort-ascending-svg: url("../svg/table-sort/ascending.svg")
-  --sort-descending-svg: url("../svg/table-sort/descending.svg")
-  --sort-remove-svg: url("../svg/table-sort/sort-remove.svg")
-  --chevron-svg: url("../svg/change-list/chevron.svg")
-
-\:root
-  @include light-theme
-
-/* 
- *Results Table
-
-table#result_list
-  tbody td
-    padding: 8px 15px
-    font-family: sans-serif
-    font-size: 0.9em
-
-  thead th
-    padding: 5px 10px
-    border-top: none
-    color: var(--change-list-table-header-fg-color)
-    background: var(--change-list-table-header-bg-color)
-
-  a
-    color: var(--change-list-table-header-fg-color)
-
-/*
- *Table inputs
-
+@import ./enhancer-base
 #changelist table
   input
     &[type="text"]:focus, &[type="password"]:focus, &[type="email"]:focus, &[type="url"]:focus, &[type="number"]:focus, &[type="tel"]:focus
@@ -53,58 +9,15 @@ table#result_list
     font-size: 1rem
     box-shadow: 0 1px 10px var(--box-shadow-color)
 
+  thead th
+    padding: 5px 10px
+
+.change-list .filtered table
+  max-width: 100%
+  margin-left: 0
+
 /* 
  *Sort in table
-
-table#result_list thead th
-  background: var(--change-list-table-header-bg-color)
-
-  &:nth-child(n + 2)
-    border-left: solid var(--change-list-table-header-separator-color) 1px
-
-  &.sortable
-    background: var(--change-list-table-header-bg-color2)
-
-    .text a
-      background: var(--change-list-table-header-bg-color2)
-      transition: unset
-
-    &:hover
-      background: var(--change-list-table-header-bg-hover-color)
-
-      .text a
-        background: var(--change-list-table-header-bg-hover-color)
-
-  &.sorted .sortoptions a
-    background-color: var(--sort-icons-color)
-    mask-size: 14px auto
-    mask-position: center
-    mask-repeat: no-repeat
-    -webkit-mask-position: center
-    -webkit-mask-repeat: no-repeat
-    -webkit-mask-size: 14px auto
-    transition: unset
-    background-image: unset
-
-    &:hover
-      background-color: var(--sort-icons-hover-color)
-      background-image: unset
-
-    &.ascending
-      mask-image: var(--sort-ascending-svg)
-      -webkit-mask-image: var(--sort-ascending-svg)
-
-    &.descending
-      mask-image: var(--sort-descending-svg)
-      -webkit-mask-image: var(--sort-descending-svg)
-
-    &.sortremove
-      mask-image: var(--sort-remove-svg)
-      -webkit-mask-image: var(--sort-remove-svg)
-      transition: unset
-
-      &::after, &:hover::after
-        content: none
 
 /*
  *Results List container
@@ -237,3 +150,53 @@ form#changelist-form
       border-radius: 10px
       display: inline-block
       padding: 2px 10px
+
+
+/* SideBar
+
+#nav-sidebar
+  flex: 0 0 286px
+  left: -286px
+  margin-left: -286px
+  transition: margin 0.5s ease-in
+
+.main
+  &.shifted > #nav-sidebar
+    transition: margin 0.5s ease-out
+
+    + .content
+      max-width: calc(100% - 312px)
+      transition: max-width 0.5s ease-in
+
+  > #nav-sidebar + .content
+    max-width: calc(100% - 24px)
+    transition: max-width 0.5s ease-out
+
+#nav-filter
+  font-weight: normal
+  background-color: var(--body-bg)
+  border-radius: 4px
+  color: var(--body-fg)
+  border: 1px solid var(--border-color)
+  padding: 4px 5px
+  margin-top: 5px
+  margin-bottom: 5px
+  margin-left: 5px
+  font-size: 0.8125rem
+  max-width: calc(100% - 10px)
+
+@media (max-width: 767px)
+  .main
+    > #nav-sidebar + .content, &.shifted > #nav-sidebar + .content
+      max-width: 100%
+
+
+.toggle-nav-sidebar::before
+  content: '\00BB'
+  transition: transform 0.2s ease-in-out
+  transform: rotate(0deg)
+
+.main.shifted .toggle-nav-sidebar::before
+  content: '\00BB'
+  transition: transform 0.2s ease-in-out
+  transform: rotate(180deg)
