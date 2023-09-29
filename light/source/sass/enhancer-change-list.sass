@@ -1,5 +1,6 @@
-@import ./enhancer-base
 #changelist table
+  max-width: 100%
+  margin-left: 0
   input
     &[type="text"]:focus, &[type="password"]:focus, &[type="email"]:focus, &[type="url"]:focus, &[type="number"]:focus, &[type="tel"]:focus
       font-size: 1rem
@@ -16,12 +17,6 @@
   max-width: 100%
   margin-left: 0
 
-/* 
- *Sort in table
-
-/*
- *Results List container
-
 form#changelist-form
   div.results
     border: 1px solid var(--hairline-color)
@@ -30,9 +25,6 @@ form#changelist-form
 
   p.paginator
     border-top: none
-
-/* 
- *List Filters
 
 #changelist-filter
   border-radius: 10px
@@ -52,16 +44,10 @@ form#changelist-form
   border-top-left-radius: 10px
   border-top-right-radius: 10px
 
-/*
- *Search-Form
-
 #toolbar
   border: 1px solid var(--hairline-color) !important
   box-shadow: 1px 0px 5px var(--box-shadow-color)
   border-radius: 10px
-
-/*
- *Collapse List Filter
 
 #changelist-filter
   details
@@ -150,53 +136,3 @@ form#changelist-form
       border-radius: 10px
       display: inline-block
       padding: 2px 10px
-
-
-/* SideBar
-
-#nav-sidebar
-  flex: 0 0 286px
-  left: -286px
-  margin-left: -286px
-  transition: margin 0.5s ease-in
-
-.main
-  &.shifted > #nav-sidebar
-    transition: margin 0.5s ease-out
-
-    + .content
-      max-width: calc(100% - 312px)
-      transition: max-width 0.5s ease-in
-
-  > #nav-sidebar + .content
-    max-width: calc(100% - 24px)
-    transition: max-width 0.5s ease-out
-
-#nav-filter
-  font-weight: normal
-  background-color: var(--body-bg)
-  border-radius: 4px
-  color: var(--body-fg)
-  border: 1px solid var(--border-color)
-  padding: 4px 5px
-  margin-top: 5px
-  margin-bottom: 5px
-  margin-left: 5px
-  font-size: 0.8125rem
-  max-width: calc(100% - 10px)
-
-@media (max-width: 767px)
-  .main
-    > #nav-sidebar + .content, &.shifted > #nav-sidebar + .content
-      max-width: 100%
-
-
-.toggle-nav-sidebar::before
-  content: '\00BB'
-  transition: transform 0.2s ease-in-out
-  transform: rotate(0deg)
-
-.main.shifted .toggle-nav-sidebar::before
-  content: '\00BB'
-  transition: transform 0.2s ease-in-out
-  transform: rotate(180deg)
