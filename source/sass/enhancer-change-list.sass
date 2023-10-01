@@ -8,6 +8,11 @@
 #changelist table
   max-width: 100%
   margin-left: 0
+
+  tbody tr:last-child
+    td, th
+      border-bottom: none
+
   input
     &[type="text"]:focus, &[type="password"]:focus, &[type="email"]:focus, &[type="url"]:focus, &[type="number"]:focus, &[type="tel"]:focus
       font-size: 1rem
