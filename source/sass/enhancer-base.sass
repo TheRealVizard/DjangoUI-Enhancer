@@ -16,6 +16,8 @@
   --border-color: #DEE2E6
   --hairline-color: #C7C8C9
   --darkened-bg: #F5F5F5
+  --focus-border-color: #0d6efd40
+  --select-bg-color: #0d6efd
 
   /* SVG
   --sort-ascending-svg: url("../svg/table-sort/ascending.svg")
@@ -214,3 +216,35 @@ table thead th
                 border-left: none
                 border-bottom-right-radius: 10px
                 border-bottom: 1px solid var(--hairline-color)
+
+
+input, select, textarea
+    &:focus
+      border-color: var(--focus-border-color)
+      outline: 0
+      box-shadow:  0 0 0 0.2rem var(--focus-border-color)
+
+input[type=checkbox]
+    border-radius: 0.25em
+    width: 1em
+    height: 1em
+    min-width: 1em
+    min-height: 1em
+    margin-top: 0.25em
+    vertical-align: top
+    background-color: #fff
+    background-repeat: no-repeat
+    background-size: 1em 1em
+    border: 1px solid rgba(0,0,0,.25)
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    -webkit-print-color-adjust: exact
+    color-adjust: exact
+    cursor: pointer
+
+    &:checked
+      background-image: url("../svg/checkbox/check-mark.svg")
+      background-position: center
+      background-color: var(--select-bg-color)
+      border-color: var(--select-bg-color)

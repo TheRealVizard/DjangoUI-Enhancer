@@ -29,6 +29,11 @@
   font-size: 0.8125rem
   max-width: calc(100% - 10px)
 
+  &:focus
+      border-color: var(--focus-border-color)
+      outline: 0
+      box-shadow:  0 0 0 0.2rem var(--focus-border-color)
+
 @media (max-width: 767px)
   .main
     > #nav-sidebar + .content, &.shifted > #nav-sidebar + .content
