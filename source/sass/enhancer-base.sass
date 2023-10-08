@@ -1,34 +1,6 @@
-@mixin light-theme
-  --scrollbar-track-color: #f0f0f0
-  --scrollbar-hover-color: #575757
-  --scrollbar-primary-color: #858585
-  --box-shadow-color: #00000026
-  --list-filter-selected-bg-color: #fad986
-  --list-filter-selected-fg-color: black
-  --change-list-table-header-bg-color: #f1f5f9
-  --change-list-table-header-bg-color2: #e2e8f0
-  --change-list-table-header-fg-color: black
-  --change-list-table-header-bg-hover-color: #cbd5e1
-  --change-list-table-header-separator-color: var(--hairline-color)
-  --sort-icons-color: #1e293b
-  --sort-icons-hover-color: #475569
-  --body-bg: #FFFFFF
-  --border-color: #DEE2E6
-  --hairline-color: #C7C8C9
-  --darkened-bg: #F5F5F5
-  --focus-border-color: #0d6efd40
-  --checkbox-bg-color: #0d6efd
-  --form-control-disabled-bg-color: #e9ecef
-  --checkbox-border-color: rgba(0,0,0,.25)
-
-  /* SVG
-  --sort-ascending-svg: url("../svg/table-sort/ascending.svg")
-  --sort-descending-svg: url("../svg/table-sort/descending.svg")
-  --sort-remove-svg: url("../svg/table-sort/sort-remove.svg")
-  --chevron-svg: url("../svg/change-list/chevron.svg")
-
+@use 'enhancer-globals' as mixin
 \:root
-  @include light-theme
+  +mixin.light-theme
 
 
 body
@@ -191,7 +163,7 @@ table thead th
 
 
 .module caption, .module h2, .inline-group h2 
-    border: 1px solid var(--hairline-color) !important
+    border: var(--default-border) !important
     border-bottom-left-radius: 0px
     border-bottom-right-radius: 0px
     border-top-left-radius: 10px
@@ -200,22 +172,72 @@ table thead th
 .module > table >
     tbody
         th:first-child
-            border-left: 1px solid var(--hairline-color)
+            border-left: var(--default-border)
 
         td:last-child
-            border-right: 1px solid var(--hairline-color)
+            border-right: var(--default-border)
 
         > tr:nth-last-child(1) >
-            th:first-child
+            td:first-child, th:first-child
                 border-right: none
                 border-bottom-left-radius: 10px
-                border-bottom: 1px solid var(--hairline-color)
+                border-bottom: var(--default-border)
 
             td:last-child
                 border-left: none
                 border-bottom-right-radius: 10px
-                border-bottom: 1px solid var(--hairline-color)
+                border-bottom: var(--default-border)
 
+@keyframes expandAnimation
+  0%
+    height: 0
+    opacity: 0
+  100%
+    height: 100px
+    opacity: 1
+
+fieldset
+  transition: height 3.3s ease-in-out
+  &.module 
+    margin-bottom: 3px
+    h2
+      border-radius: 10px
+      transition: background 0.3s ease-in-out
+      box-shadow: var(--default-shadow-box)
+      font-weight: 500
+    > div.inline-related
+      margin-right: 5px
+      margin-left: 5px
+    > table 
+      animation: expandAnimation 0.5s ease-in-out
+      margin-top: 5px
+      >thead
+        th
+          border-top: var(--default-border)
+        th:not(.original):first-child,
+        th.original + th:not(.original)
+          border-top-left-radius: 10px
+        th:last-child
+          border-top-right-radius: 10px
+        tr
+          border: var(--default-border)
+        th:last-child
+          border-right: var(--default-border) 
+      >tbody
+        tr
+          td:not(.original):first-child,
+          td.original + td:not(.original)
+            border-left: var(--default-border)
+        > tr:nth-last-child(1) >
+            td:last-child, td:first-child
+              border-left: var(--default-border)
+              border-right: var(--default-border)
+  &.collapsed
+    border: none
+    > h2
+      display: block
+      opacity: 1
+    
 
 input, select, textarea
     &:focus
@@ -252,7 +274,7 @@ input[type=checkbox]
       border-color: var(--checkbox-bg-color)
 
 #content-related
-    border: 1px solid var(--hairline-color) !important
+    border: var(--default-border) !important
     border-radius: 10px
 
     .module 

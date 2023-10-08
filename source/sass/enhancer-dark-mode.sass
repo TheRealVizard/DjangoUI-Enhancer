@@ -1,5 +1,5 @@
 
-@import ./enhancer-base
+@use 'enhancer-globals' as mixin
 @mixin dark-theme
     --box-shadow-color: #80808026
     --list-filter-selected-bg-color: #00363a
@@ -22,14 +22,14 @@
     --checkbox-border-color: #495057
 
 #changelist-filter
-    box-shadow: 1px 0px 5px var(--box-shadow-color)
+    box-shadow: var(--default-shadow-box)
 
     > details > ul > li.selected a
       background: var(--list-filter-selected-bg-color)
       color: var(--list-filter-selected-fg-color)
 
 #toolbar, form#changelist-form div.results
-    box-shadow: 1px 0px 5px var(--box-shadow-color)
+    box-shadow: var(--default-shadow-box)
 
     \::-webkit-scrollbar-button:single-button
         &:horizontal
@@ -56,7 +56,7 @@
 
 html
     &[data-theme="light"]
-        @include light-theme
+        +mixin.light-theme
 
     &[data-theme="dark"]
         @include dark-theme
