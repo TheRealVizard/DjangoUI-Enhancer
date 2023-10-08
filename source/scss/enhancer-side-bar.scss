@@ -46,12 +46,12 @@
   }
 }
 .toggle-nav-sidebar::before {
-  content: '\00BB';
+  content: "\00BB";
   transition: transform 0.2s ease-in-out;
   transform: scaleX(1);
 }
 .main.shifted .toggle-nav-sidebar::before {
-  content: '\00BB';
+  content: "\00BB";
   transition: transform 0.2s ease-in-out;
   transform: scaleX(-1);
 }

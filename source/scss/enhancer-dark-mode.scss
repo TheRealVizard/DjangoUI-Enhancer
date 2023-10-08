@@ -1,4 +1,4 @@
-@use 'enhancer-globals' as mixin;
+@use "enhancer-globals" as mixin;
 @mixin dark-theme {
   --box-shadow-color: #80808026;
   --list-filter-selected-bg-color: #00363a;
