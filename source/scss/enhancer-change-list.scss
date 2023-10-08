@@ -6,6 +6,9 @@
       box-shadow: 0 0 0 0.2rem var(--focus-border-color);
     }
   }
+  .paginator {
+    border-bottom: none;
+  }
 }
 #changelist table {
   max-width: 100%;

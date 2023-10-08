@@ -383,10 +383,48 @@ input[type="email"]:focus,
 input[type="url"]:focus,
 input[type="number"]:focus,
 input[type="tel"]:focus,
+input[type="date"]:focus,
 select:focus,
 textarea:focus,
 button:focus {
   border-color: var(--focus-border-color);
   outline: 0;
   box-shadow: 0 0 0 0.2rem var(--focus-border-color);
+}
+
+.paginator {
+  border-top: none;
+  margin-top: 3px;
+  *,
+  a:link,
+  a:visited,
+  .this-page {
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 0.85rem;
+    background: var(--change-list-table-header-bg-color);
+    border: 1px solid var(--change-list-table-header-bg-color2);
+    color: var(--body-fg);
+    font-weight: bold;
+  }
+  .this-page {
+    background: var(--pagination-current-page-bg-color);
+    border: 1px solid var(--focus-border-color);
+  }
+}
+
+#change-history {
+  .paginator {
+    border-bottom: none;
+  }
+  table {
+    thead {
+      th:first-child {
+        border-top-left-radius: 10px;
+      }
+      th:last-child {
+        border-top-right-radius: 10px;
+      }
+    }
+  }
 }

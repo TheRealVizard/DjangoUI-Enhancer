@@ -19,6 +19,8 @@
   --darkened-bg: #262626;
   --form-control-disabled-bg-color: #e9ecef;
   --checkbox-border-color: #495057;
+  /* Pagination */
+  --pagination-current-page-bg-color: #1f2a3a;
 }
 #changelist-filter {
   box-shadow: var(--default-shadow-box);
@@ -58,6 +60,9 @@ form#changelist-form div.results {
   :root {
     @include dark-theme;
   }
+  input[type="date"] {
+    color-scheme: dark;
+  }
 }
 
 html {
@@ -66,5 +71,8 @@ html {
   }
   &[data-theme="dark"] {
     @include dark-theme;
+    input[type="date"] {
+      color-scheme: dark;
+    }
   }
 }

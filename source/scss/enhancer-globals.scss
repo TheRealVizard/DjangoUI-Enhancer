@@ -26,7 +26,11 @@
   --sort-descending-svg: url("../svg/table-sort/descending.svg");
   --sort-remove-svg: url("../svg/table-sort/sort-remove.svg");
   --chevron-svg: url("../svg/change-list/chevron.svg");
+
   /* Defaults*/
   --default-border: 1px solid var(--hairline-color);
   --default-shadow-box: 1px 0px 5px var(--box-shadow-color);
+
+  /* Pagination */
+  --pagination-current-page-bg-color: #c6cbd1;
 }
