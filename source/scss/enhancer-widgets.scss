@@ -1,8 +1,10 @@
 .selector {
-  .selector-available, .selector-chosen {
+  margin: 0.2rem;
+  .selector-available,
+  .selector-chosen {
     h2 {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
     }
   }
 }
