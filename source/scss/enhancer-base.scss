@@ -238,11 +238,9 @@ table thead th {
 fieldset {
   transition: height 3.3s ease-in-out;
   &.module {
-    margin-bottom: 3px;
     h2 {
       border-radius: 10px;
       transition: background 0.3s ease-in-out;
-      box-shadow: var(--default-shadow-box);
       font-weight: 500;
     }
     > div.inline-related {
