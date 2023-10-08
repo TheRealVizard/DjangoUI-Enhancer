@@ -243,9 +243,35 @@ fieldset {
       transition: background 0.3s ease-in-out;
       font-weight: 500;
     }
-    > div.inline-related {
+    > div.inline-related,
+    div.add-row {
       margin-right: 5px;
       margin-left: 5px;
+      border: var(--default-border);
+    }
+    > div.inline-related {
+      border-bottom: none;
+      border-top: none;
+      animation: expandAnimation 0.5s ease-in-out;
+      h3 {
+        border-top: unset;
+        background: var(--change-list-table-header-bg-color);
+      }
+    }
+    > div.add-row {
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-top: none;
+    }
+    > div.inline-related:first-of-type {
+      margin-top: 5px;
+      border-top: var(--default-border);
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      h3 {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
     }
     > table {
       animation: expandAnimation 0.5s ease-in-out;
@@ -257,6 +283,7 @@ fieldset {
         th:not(.original):first-child,
         th.original + th:not(.original) {
           border-top-left-radius: 10px;
+          border-left: var(--default-border);
         }
         th:last-child {
           border-top-right-radius: 10px;
@@ -290,6 +317,9 @@ fieldset {
     > h2 {
       display: block;
       opacity: 1;
+    }
+    * {
+      display: none;
     }
   }
 }
