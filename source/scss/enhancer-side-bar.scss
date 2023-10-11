@@ -3,6 +3,13 @@
   left: -286px;
   margin-left: -286px;
   transition: margin 0.5s ease-in;
+  tr.current-model {
+    background: unset;
+    td,
+    th {
+      background: var(--selected-row);
+    }
+  }
 }
 .main {
   &.shifted > #nav-sidebar {

@@ -114,12 +114,29 @@ body {
   }
 }
 table {
-  tbody td {
-    padding: 8px 15px;
-    font-family: sans-serif;
-    font-size: 0.9em;
+  tbody {
+    tr:nth-child(2n + 1) {
+      background: unset;
+      th,
+      td {
+        background: var(--body-bg);
+      }
+    }
+    tr:nth-child(2n) {
+      background: unset;
+      th,
+      td {
+        background: var(--darkened-bg);
+      }
+    }
+    td {
+      padding: 8px 15px;
+      font-family: sans-serif;
+      font-size: 0.9em;
+    }
   }
-  thead th {
+  thead th,
+  thead tr th {
     padding: 5px 10px;
     border-top: none;
     color: var(--change-list-table-header-fg-color);
