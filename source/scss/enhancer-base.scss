@@ -331,12 +331,12 @@ fieldset {
   }
   &.collapsed {
     border: none;
-    > h2 {
-      display: block;
-      opacity: 1;
+    > * {
+      display: none  !important;
     }
-    * {
-      display: none;
+    > h2 {
+      display: block !important;
+      opacity: 1;
     }
   }
 }
