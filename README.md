@@ -1,6 +1,6 @@
 # DjangoUI Enhancer
 
-DjangoUI Enhancer is a comprehensive collection of tools and styles designed to elevate and improve the user interface (UI) of your Django applications. With a focus on enhancing functionality and aesthetics, DjangoUI Enhancer empowers you to create visually appealing and professional user interfaces.
+DjangoUI Enhancer is a collection of styles designed to elevate and improve the user interface (UI) of your Django applications. With a focus on enhancing functionality and aesthetics, DjangoUI Enhancer empowers you to create visually appealing and professional user interfaces.
 
 ## Key Features:
 
